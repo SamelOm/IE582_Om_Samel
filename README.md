@@ -15,50 +15,20 @@ Steps:
 Now the System:
 
 
-# Real-Time WebSocket Communication System
+# The System:
 
 This of a **Node.js WebSocket server**, a **Python client**, and a **Front-End interface** that communicate in real time using **Socket.IO**. The system processes chat messages and direction commands.
+
+
 
 ## Features
 - Real-time bi-directional communication between the front-end and Python client via Node.js server.
 - WebSockets for efficient message exchange.
 - Graceful shutdown handling in Python.
 
-
----
-
-## 🚀 How to Run the System
-
-### **1️⃣ Start the Node.js WebSocket Server**
-```bash
-cd server
-node server.js
-```
-This starts an HTTPS server and WebSocket service on `localhost:8080`.
-
-### **2️⃣ Start the Python Client**
-```bash
-cd client
-python3 client.py
-```
-This connects to the WebSocket server and listens for messages.
-
-### **3️⃣ Start the Front-End (Optional)**
-You can use a simple front-end with Socket.IO to send and receive messages:
-```html
-<script src="https://cdn.socket.io/4.0.1/socket.io.js"></script>
-<script>
-    var socket = io('https://localhost:8080');
-    socket.emit('chat', { data: 'Hello' });
-    socket.on('reply', (data) => { console.log('Reply received:', data); });
-</script>
-```
-
----
-
 ## 🛠️ System Architecture
 
-```plaintext
+```
 [Front-End]  →  [Node.js Server]  →  [Python Client]
     ▲                ▼                    ▼
     └──────────── Message Flow ───────────┘
@@ -72,7 +42,7 @@ You can use a simple front-end with Socket.IO to send and receive messages:
 
 ---
 
-## 🔄 Execution Order
+## Execution Flow
 1. **Start the WebSocket Server (`server.js`)** → Listens for WebSocket connections.
 2. **Run the Python Client (`client.py`)** → Connects to the server, listens for events.
 3. **Send a message from the Front-End** → The server forwards it to the Python client.
@@ -80,7 +50,7 @@ You can use a simple front-end with Socket.IO to send and receive messages:
 
 ---
 
-## 📝 WebSocket Event Flow
+## WebSocket Event Flow
 | Event | Sender | Receiver | Description |
 |-------|--------|----------|-------------|
 | `chat` | Front-End | Python Client | Sends a chat message |
@@ -90,36 +60,10 @@ You can use a simple front-end with Socket.IO to send and receive messages:
 
 ---
 
-## ✅ Graceful Shutdown Handling (Python)
+## Graceful Shutdown Handling (Python)
 - The Python client ensures a **graceful exit** when terminated (`SIGINT/SIGTERM`).
 - Uses the `GracefulShutdown` class to **clean up resources** before exiting.
 
----
 
-## 🔧 Dependencies
-### **Node.js Server**
-```bash
-npm install express socket.io https fs yargs
-```
 
-### **Python Client**
-```bash
-pip install socketio
-```
 
----
-
-## 📌 Future Enhancements
-- [ ] Add **authentication** for secure access.
-- [ ] Implement **database storage** for message logs.
-- [ ] Improve **error handling** for edge cases.
-
----
-
-## 📜 License
-This project is open-source and free to use under the MIT License.
-
----
-
-## 💬 Questions?
-Feel free to reach out if you need any help! 🚀
