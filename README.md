@@ -26,7 +26,7 @@ This of a **Node.js WebSocket server**, a **Python client**, and a **Front-End i
 - WebSockets for efficient message exchange.
 - Graceful shutdown handling in Python.
 
-## 🛠️ System Architecture
+## 🛠System Architecture
 
 ```
 [Front-End]  →  [Node.js Server]  →  [Python Client]
@@ -38,7 +38,7 @@ This of a **Node.js WebSocket server**, a **Python client**, and a **Front-End i
 |-----------|------|----------------|
 | **WebSocket Server** | `server.js` | Handles WebSocket connections & message forwarding |
 | **Python Client** | `client.py` | Processes chat/direction messages & replies |
-| **Front-End** | `index.html` (optional) | Sends/receives messages via WebSockets |
+| **Front-End** | `index.html`  | Sends/receives messages via WebSockets |
 
 ---
 
