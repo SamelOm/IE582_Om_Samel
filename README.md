@@ -26,7 +26,7 @@ This of a **Node.js WebSocket server**, a **Python client**, and a **Front-End i
 - WebSockets for efficient message exchange.
 - Graceful shutdown handling in Python.
 
-## 🛠System Architecture
+## System Architecture
 
 ```
 [Front-End]  →  [Node.js Server]  →  [Python Client]
